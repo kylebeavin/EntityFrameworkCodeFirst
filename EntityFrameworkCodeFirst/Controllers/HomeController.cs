@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EntityFrameworkCodeFirst.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,18 +14,36 @@ namespace EntityFrameworkCodeFirst.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult GetEmployees()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            var employees = EmployeeRepository.GetEmployees();
+            return Json(employees);
         }
 
-        public ActionResult Contact()
+        public ActionResult GetEmployee(int Id)
         {
-            ViewBag.Message = "Your contact page.";
+            var employee = EmployeeRepository.GetEmployee(Id);
+            return Json(employee);
+        }
 
-            return View();
+        public ActionResult CreateEmployee(Employee model)
+        {
+            var msg = EmployeeRepository.CreateEmployee(model);
+
+            return Json(msg);
+        }
+
+        public ActionResult UpdateEmployee(Employee model)
+        {
+            var msg = EmployeeRepository.UpdateEmployee(model);
+
+            return Json(msg);
+        }
+
+        public ActionResult DeleteEmployee(int Id)
+        {
+            var employee = EmployeeRepository.DeleteEmployee(Id);
+            return Json(employee);
         }
     }
 }

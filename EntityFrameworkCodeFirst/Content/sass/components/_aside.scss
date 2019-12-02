@@ -1,0 +1,46 @@
+﻿.aside {
+    position: relative;
+    width: 50%;
+    float: right;
+    border: 1px solid gray;
+    border-radius: 3px;
+
+    &-head {
+        padding: 10px;
+        border-bottom: 1px solid gray;
+
+        h4 {
+            margin: 0px;
+        }
+    }
+
+    &-body {
+        padding: 10px;
+        min-height: 200px;
+
+        & ul {
+            list-style: none;
+            margin: 0;
+            padding: 10px;
+            min-height: 80px;
+            max-height: 80px;
+            overflow-y: auto;
+        }
+
+        .form-control {
+            margin-bottom: 5px;
+        }
+
+        & hr {
+            margin: 10px 0 5px 0;
+        }
+
+        & label {
+            margin-bottom: 0px;
+        }
+
+        & .aside-body-content {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,430 @@
+﻿@model EntityFrameworkCodeFirst.Models.Employee
+
+<div class="row aside">
+
+    <div class="tab">
+        <button class="tablinks active" name="create-employee">C</button>
+        <button class="tablinks" name="read-employee">R</button>
+        <button class="tablinks" name="update-employee">U</button>
+        <button class="tablinks" name="delete-employee">D</button>
+    </div>
+
+    <div id="create-employee" class="col-sm-12 tabcontent active">
+
+        <div class="row aside-head">
+
+            <div class="col-sm-12">
+
+                <h4>Employee - Create</h4>
+
+            </div>
+
+        </div>
+
+        <div class="row aside-body">
+
+            <div class="col-sm-12">
+
+                <input type="text" id="FirstName" class="form-control" name="FirstName" value="" placeholder="First Name" required />
+
+            </div>
+
+            <div class="col-sm-12">
+
+                <input type="text" id="LastName" class="form-control" name="LastName" value="" placeholder="Last Name" required />
+
+            </div>
+
+            <div class="col-sm-12">
+
+                <input type="text" id="Gender" class="form-control" name="Gender" value="" placeholder="Gender" required />
+
+            </div>
+
+            <div class="col-sm-12">
+
+                <input type="number" id="Salary" class="form-control" name="Salary" value="" placeholder="Salary" required />
+
+            </div>
+
+            <div class="col-sm-12">
+
+                <input type="text" id="Department" class="form-control" name="Department" value="" placeholder="Department (optional)" />
+
+            </div>
+
+            <div class="col-sm-12">
+
+                <button id="CreateEmployee" type="button" class="btn btn-light pull-right">Create</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="read-employee" class="col-sm-12 tabcontent">
+
+        <div class="row aside-head">
+
+            <div class="col-sm-12">
+
+                <h4>Employee - Read</h4>
+
+            </div>
+
+        </div>
+
+        <div class="row aside-body">
+
+            <div class="col-sm-12">
+
+                <div class="well">
+
+                    <ul id="employees-list">
+
+                        @* Content Loaded Dynamically *@
+
+                    </ul>
+
+                </div>
+
+                <hr />
+
+                <div class="aside-body-content">
+
+                    <div class="row">
+
+                        <div class="col-sm-12">
+
+                            <div><label>Id: </label><span id="read-id" class="pull-right">@* Content Loaded Dynamically *@</span></div>
+                            <div><label>First Name: </label><span id="read-firstname" class="pull-right">@* Content Loaded Dynamically *@</span></div>
+                            <div><label>Last Name: </label><span id="read-lastname" class="pull-right">@* Content Loaded Dynamically *@</span></div>
+                            <div><label>Gender: </label><span id="read-gender" class="pull-right">@* Content Loaded Dynamically *@</span></div>
+                            <div><label>Department: </label><span id="read-department" class="pull-right">@* Content Loaded Dynamically *@</span></div>
+                            <div><label>Salary: </label><span id="read-salary" class="pull-right">@* Content Loaded Dynamically *@</span></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="update-employee" class="col-sm-12 tabcontent">
+
+        <div class="row aside-head">
+
+            <div class="col-sm-12">
+
+                <h4>Employee - Update</h4>
+
+            </div>
+
+        </div>
+
+        <div class="row aside-body">
+
+            <div class="col-sm-12">
+
+                <input type="number" id="Id" class="form-control" name="Id" value="" placeholder="Id" required />
+
+            </div>
+
+            <div class="col-sm-12">
+
+                <input type="text" id="FirstName" class="form-control" name="FirstName" value="" placeholder="First Name" required />
+
+            </div>
+
+            <div class="col-sm-12">
+
+                <input type="text" id="LastName" class="form-control" name="LastName" value="" placeholder="Last Name" required />
+
+            </div>
+
+            <div class="col-sm-12">
+
+                <input type="text" id="Gender" class="form-control" name="Gender" value="" placeholder="Gender" required />
+
+            </div>
+
+            <div class="col-sm-12">
+
+                <input type="number" id="Salary" class="form-control" name="Salary" value="" placeholder="Salary" required />
+
+            </div>
+
+            <div class="col-sm-12">
+
+                <input type="text" id="Department" class="form-control" name="Department" value="" placeholder="Department (optional)" />
+
+            </div>
+
+            <div class="col-sm-12">
+
+                <button id="UpdateEmployee" type="button" class="btn btn-light pull-right">Update</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="delete-employee" class="col-sm-12 tabcontent">
+
+        <div class="row aside-head">
+
+            <div class="col-sm-12">
+
+                <h4>Employee - Delete</h4>
+
+            </div>
+
+        </div>
+
+        <div class="row aside-body">
+
+            <div class="col-sm-12">
+
+                <div class="row">
+
+                    <div class="col-sm-12">
+
+                        <input type="number" id="Id" class="form-control" name="Id" value="" placeholder="Id" required />
+
+                        <button id="DeleteEmployee" type="button" class="btn btn-light pull-right" disabled>Delete</button>
+
+                    </div>
+
+                </div>
+
+                <hr />
+
+                <div class="aside-body-content">
+
+                    <div class="row">
+
+                        <div class="col-sm-12">
+
+                            <div><label>Id: </label><span id="read-id" class="pull-right">@* Content Loaded Dynamically *@</span></div>
+                            <div><label>First Name: </label><span id="read-firstname" class="pull-right">@* Content Loaded Dynamically *@</span></div>
+                            <div><label>Last Name: </label><span id="read-lastname" class="pull-right">@* Content Loaded Dynamically *@</span></div>
+                            <div><label>Gender: </label><span id="read-gender" class="pull-right">@* Content Loaded Dynamically *@</span></div>
+                            <div><label>Department: </label><span id="read-department" class="pull-right">@* Content Loaded Dynamically *@</span></div>
+                            <div><label>Salary: </label><span id="read-salary" class="pull-right">@* Content Loaded Dynamically *@</span></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    var verify = false;
+
+    $(function () {
+
+        $("#CreateEmployee").on("click", function () {
+            CreateEmployee();
+        });
+
+        $("body").on("click", "[id^=employee-]", function () {
+            GetEmployee(this);
+        });
+
+        $("#UpdateEmployee").on("click", function () {
+            UpdateEmployee();
+        });
+
+        $(".tablinks").on("click", function (e) {
+            $(".aside-body-content").hide();
+            $(".aside input").val("");
+            $("#DeleteEmployee").text("Delete");
+            verify = false;
+            if ($(this).attr("name") == "read-employee")
+                GetEmployees();
+            InitTabs(e, $(this).attr("name"));
+        });
+
+        $("#update-employee #Id").on("keyup", delay(function (e) {
+            GetEmployeeToUpdate(this);
+        }, 500));
+
+        $("#delete-employee #Id").on("keyup", delay(function (e) {
+            GetEmployeeToDelete(this);
+        }, 500));
+
+        $("#DeleteEmployee").on("click", function () {
+            if (verify)
+                DeleteEmployee(this);
+
+            $("#DeleteEmployee").text("Verify");
+            verify = true;
+        });
+    });
+
+    function CreateEmployee() {
+        var mData = {
+                FirstName: $("#FirstName").val(),
+                LastName: $("#LastName").val(),
+                Gender: $("#Gender").val(),
+                Salary: $("#Salary").val(),
+                Department: $("#Department").val()
+        }
+
+        $.ajax({
+            url: '@Url.Action("CreateEmployee", "Home")',
+            method: "POST",
+            data: JSON.stringify(mData),
+            dataType: "json",
+            contentType: "application/json",
+            success: function (data) {
+                $(".aside-head").html(data.msg);
+            }
+        });
+    }
+
+    function GetEmployees() {
+        $.ajax({
+            url: '@Url.Action("GetEmployees", "Home")',
+            method: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            success: function (data) {
+                $("#employees-list").empty();
+                $(data).each(function (i) {
+                    $("#employees-list").append("<li id='employee-" + data[i].Id + "'>" + data[i].Id + " " + data[i].FirstName + " " + data[i].LastName + "</li");
+                });
+            }
+        });
+    }
+
+    function GetEmployee(element) {
+        var mData = {
+            id: element.id.replace("employee-", "")
+        }
+
+        $.ajax({
+            url: '@Url.Action("GetEmployee", "Home")',
+            method: "POST",
+            data: JSON.stringify(mData),
+            dataType: "json",
+            contentType: "application/json",
+            success: function (data) {
+                $(".aside-body-content").show();
+                $("span[id$='read']").empty();
+                $("span#read-id").text(data.Id);
+                $("span#read-gender").text(data.Gender);
+                $("span#read-department").text(data.Department);
+                $("span#read-firstname").text(data.FirstName);
+                $("span#read-lastname").text(data.LastName);
+                $("span#read-salary").text(data.Salary);
+            }
+        });
+    }
+
+    function GetEmployeeToUpdate(element) {
+        var mData = {
+            id: $(element).val()
+        }
+
+        $.ajax({
+            url: '@Url.Action("GetEmployee", "Home")',
+            method: "POST",
+            data: JSON.stringify(mData),
+            dataType: "json",
+            contentType: "application/json",
+            success: function (data) {
+                $("#update-employee input").val("");
+                $("#update-employee #Id").val(data.Id);
+                $("#update-employee #Gender").val(data.Gender);
+                $("#update-employee #Department").val(data.Department);
+                $("#update-employee #FirstName").val(data.FirstName);
+                $("#update-employee #LastName").val(data.LastName);
+                $("#update-employee #Salary").val(data.Salary);
+            }
+        });
+    }
+
+    function UpdateEmployee() {
+        var mData = {
+            Id: $("#update-employee #Id").val(),
+            FirstName: $("#update-employee #FirstName").val(),
+            LastName: $("#update-employee #LastName").val(),
+            Gender: $("#update-employee #Gender").val(),
+            Salary: $("#update-employee #Salary").val(),
+            Department: $("#update-employee #Department").val()
+        }
+
+        $.ajax({
+            url: '@Url.Action("UpdateEmployee", "Home")',
+            method: "POST",
+            data: JSON.stringify(mData),
+            dataType: "json",
+            contentType: "application/json",
+            success: function (data) {
+                $("#update-employee input").val("");
+            }
+        });
+    }
+
+    function GetEmployeeToDelete(element) {
+        var mData = {
+            id: $(element).val()
+        }
+
+        $.ajax({
+            url: '@Url.Action("GetEmployee", "Home")',
+            method: "POST",
+            data: JSON.stringify(mData),
+            dataType: "json",
+            contentType: "application/json",
+            success: function (data) {
+                $(".aside-body-content").show();
+                $("#DeleteEmployee").removeAttr("disabled");
+                $("span[id$='read']").empty();
+                $("span#read-id").text(data.Id);
+                $("span#read-gender").text(data.Gender);
+                $("span#read-department").text(data.Department);
+                $("span#read-firstname").text(data.FirstName);
+                $("span#read-lastname").text(data.LastName);
+                $("span#read-salary").text(data.Salary);
+            }
+        });
+    }
+
+    function DeleteEmployee() {
+        var mData = {
+            id: $("#delete-employee #Id").val()
+        }
+        debugger;
+        $.ajax({
+            url: '@Url.Action("DeleteEmployee", "Home")',
+            method: "POST",
+            data: JSON.stringify(mData),
+            dataType: "json",
+            contentType: "application/json",
+            success: function (data) {
+                $(".aside-body-content").hide();
+                $("#DeleteEmployee").attr("disabled");
+                $("#DeleteEmployee").text("Delete");
+                $(".aside input").val("");
+                verify = false;
+            }
+        });
+    }
+</script>

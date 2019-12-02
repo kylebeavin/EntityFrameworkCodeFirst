@@ -1,0 +1,15 @@
+﻿.row {
+    margin-right: 0;
+    margin-left: 0;
+
+    > .col,
+    > [class*="col-"] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    & .well {
+        padding: 0px;
+        margin: 0px;
+    }
+}

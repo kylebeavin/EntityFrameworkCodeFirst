@@ -1,0 +1,9 @@
+﻿// Base styles
+@import "base/_base.scss";
+@import "base/_variables.scss";
+@import "base/_lib-overrides.scss";
+
+// Components
+@import "components/_component.scss";
+@import "components/_tab-bar.scss";
+@import "components/_aside.scss";
